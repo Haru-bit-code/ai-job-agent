@@ -1,0 +1,11 @@
+pymupdf 
+sentence-transformers
+chromadb
+fastapi
+uvicorn
+groq
+python-dotenv
+langchain
+langchain-groq
+scikit-learn
+pandas

@@ -1,0 +1,7 @@
+venv/
+.env
+__pycache__/
+*.pyc
+data/applications.db
+data/chroma_db/
+data/resume.pdf
