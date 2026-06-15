@@ -1,0 +1,35 @@
+(venv) ansarkamal@Mac ai-job-agent % curl -X POST http://localhost:8000/process \
+  -H "Content-Type: application/json" \
+  -d '{
+    "job_title": "Data Scientist",
+    "company": "Test Company",
+    "job_description": "Looking for a data scientist with Python, ML, and SQL skills. Entry level welcome.",
+    "auto_save": true
+  }'
+{"job_title":"Data Scientist","company":"Test Company","score":85,"verdict":"STRONG MATCH","apply":true,"matching_skills":["Python","ML","SQL"],"missing_skills":[],"cover_letter":"Dear Hiring Team,\nI'm excited to apply for the Data Scientist role at Test Company, as it aligns with my passion for leveraging Python, ML, and SQL to drive business insights. With a strong foundation in data analysis, machine learning, and data visualization, I'm confident that my skills make me a great fit for this position. My experience in building 15+ projects, including customer churn prediction and sentiment analysis, has equipped me with the ability to transform raw data into actionable insights.\n\nTwo projects that demonstrate my skills are customer churn prediction and sentiment analysis. In these projects, I utilized Python, Scikit-learn, and Pandas to build predictive models and analyze customer behavior. I also applied data visualization techniques using Matplotlib and Seaborn to communicate my findings effectively. These experiences have not only honed my technical skills but also taught me the importance of storytelling with data.\n\nI'm eager to bring my analytical mindset and technical expertise to Test Company and contribute to driving business growth through data-driven decision-making. I'm excited about the opportunity to work with a talented team and learn from their experiences. With my strong quantitative foundation and hands-on experience in data science, I'm confident that I can make a valuable contribution to the company. I look forward to discussing my application and how I can help drive business success.","saved_id":2}%                                          
+(venv) ansarkamal@Mac ai-job-agent % python -c "import secrets; print(secrets.token_hex(32))"
+882b021abb7ffdb42c93b9b47df1b72be096afab3edad488553e35be8d6fe65d
+(venv) ansarkamal@Mac ai-job-agent % curl -X POST http://localhost:8000/process \
+  -H "Content-Type: application/json" \
+  -d '{"job_title": "test", "company": "test", "job_description": "test"}'
+{"detail":"Invalid or missing API key. Add X-API-Key header."}%                                           
+(venv) ansarkamal@Mac ai-job-agent % curl -X POST http://localhost:8000/process \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: your_key_from_env_here" \
+  -d '{
+    "job_title": "Data Analyst",
+    "company": "Test Corp",
+    "job_description": "Python, SQL, data analysis, entry level",
+    "auto_save": true
+  }'
+{"detail":"Invalid or missing API key. Add X-API-Key header."}%                                           
+(venv) ansarkamal@Mac ai-job-agent % curl -X POST http://localhost:8000/process \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key= "***************" \
+  -d '{
+    "job_title": "Data Analyst",
+    "company": "Test Corp",
+    "job_description": "Python, SQL, data analysis, entry level",
+    "auto_save": true
+  }'
+{"job_title":"Data Analyst","company":"Test Corp","score":90,"verdict":"STRONG MATCH","apply":true,"matching_skills":["Python","SQL","data analysis"],"missing_skills":[],"cover_letter":"Dear Hiring Team at Test Corp,\n\nI'm excited to apply for the Data Analyst role, as it aligns with my passion for transforming raw data into actionable business insights. With a strong foundation in Python, SQL, and data analysis, I'm confident in my ability to drive informed decision-making. My experience in building 15+ projects, including customer churn prediction and sentiment analysis, has equipped me with the skills to extract valuable insights from complex data sets.\n\nTwo projects that demonstrate my skills are the Customer Churn Prediction and Statement Sentiment Analyzer. In the Customer Churn Prediction project, I built a machine learning classification model using Python, Pandas, and Scikit-learn to predict customer churn. I also performed exploratory data analysis and visualized churn patterns to identify key drivers of customer attrition. In the Statement Sentiment Analyzer project, I developed an NLP pipeline to classify text statements as positive, negative, or neutral sentiment using Python, NLTK, and Scikit-learn.\n\nI'm eager to bring my analytical and problem-solving skills to Test Corp and contribute to the team's success. I'm excited about the opportunity to work with Python and SQL to drive business growth and improve decision-making. Thank you for considering my application. I'm looking forward to discussing my qualifications further and exploring how I can make a meaningful impact at Test Corp.","saved_id":3}% 

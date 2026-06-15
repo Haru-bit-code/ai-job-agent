@@ -4,4 +4,4 @@ __pycache__/
 *.pyc
 data/applications.db
 data/chroma_db/
-data/resume.pdf
+data/resume.pdf.DS_Store
